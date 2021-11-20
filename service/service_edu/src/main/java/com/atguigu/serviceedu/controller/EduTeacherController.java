@@ -25,7 +25,15 @@ public class EduTeacherController {
 
     @GetMapping("findAll")
     public List<EduTeacher> findAllTeacher(){
-        //调用service方法查询所有的操作
+        //调用service方法查询所有
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        // 的操作
         List<EduTeacher> list = teacherService.list(null);
         return list;
     }
