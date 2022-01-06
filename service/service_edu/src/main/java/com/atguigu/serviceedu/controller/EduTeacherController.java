@@ -25,7 +25,8 @@ import java.util.List;
  */
 @Api(description = "讲师管理")
 @RestController
-@RequestMapping("/serviceedu/teacher")
+@RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     @Autowired
@@ -47,7 +48,7 @@ public class EduTeacherController {
 
     @ApiOperation(value = "根据ID删除讲师")
     @DeleteMapping("{id}")
-    public R removeById(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id){
+    public R removeById(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable Long id){
          teacherService.removeById(id);
          return R.ok();
     }
@@ -92,7 +93,7 @@ public class EduTeacherController {
 
     @ApiOperation(value = "根据ID查询讲师")
     @GetMapping("getTeacher/{id}")
-    public R getById(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable String id){
+    public R getById(@ApiParam(name = "id", value = "讲师ID", required = true) @PathVariable Long id){
         EduTeacher teacher = teacherService.getById(id);
         return R.ok().data("item", teacher);
     }
